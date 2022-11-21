@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function ActualizarTool(props){
     
-    let url = props.path + "/" + "Actualizar" + "/" + props.id;  
+    let url = props.path  + "/Actualizar/" + props.id;  
     
     
     return (

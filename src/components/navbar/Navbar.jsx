@@ -52,7 +52,19 @@ function Navbar(){
 
                 <li>
                     <a>
-                        <Link to = {"/usuarios"} className ="nav-link px-2 text-black"> Usuarios </Link>
+                        <Link to = {"/listaUsuarios"} className ="nav-link px-2 text-black">Lista Usuarios </Link>
+                    </a>
+                </li>
+
+                <li>
+                    <a>
+                        <Link to = {"/listaProductos"} className ="nav-link px-2 text-black">Lista Productos </Link>
+                    </a>
+                </li>
+
+                <li>
+                    <a>
+                        <Link to = {"/listaCategorias"} className ="nav-link px-2 text-black">Lista Categorias </Link>
                     </a>
                 </li>
                 

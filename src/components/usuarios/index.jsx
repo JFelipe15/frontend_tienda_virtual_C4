@@ -15,7 +15,7 @@ function UsuariosIndex(props) {
             
             <MainPage  
                 data = {datosTabla}
-                path = {"/usuarios"}
+                path = {"/listaUsuarios"}
                 name = {"Tabla de Usuarios"}  
                 columns = {["id", "firstName","lastName", "email", "username", "password"]}
                 columnsAlias = 
@@ -29,7 +29,7 @@ function UsuariosIndex(props) {
                         "Contraseña"
                     ]
                 }
-                tools = {["Actualizar", "Eliminar"]}
+                tools = {["Crear" , "Actualizar", "Eliminar"]}
                
             />
            

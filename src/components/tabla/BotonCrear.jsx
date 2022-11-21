@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 function BotonCrear(props){
 
-    let url = props.path + "/crearUsuarios";
-   
+    {/*let url = props.path + "/crearUsuarios";*/}
+    let url = props.path + "/Crear/";
     
     return (
         <Link to = {url}>

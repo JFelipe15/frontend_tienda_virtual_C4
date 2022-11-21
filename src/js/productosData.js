@@ -1,3 +1,5 @@
+import img from "../img/Productos/tamal_pipian.jpg"
+
 let productos = [
         {
             "id": 1,
@@ -11,11 +13,13 @@ let productos = [
             "category": "smartphones",
             "thumbnail": "https://i.dummyjson.com/data/products/1/thumbnail.jpg",
             "images": [
-                "https://i.dummyjson.com/data/products/1/1.jpg",
-                "https://i.dummyjson.com/data/products/1/2.jpg",
-                "https://i.dummyjson.com/data/products/1/3.jpg",
-                "https://i.dummyjson.com/data/products/1/4.jpg",
-                "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+                //"https://i.dummyjson.com/data/products/1/1.jpg",
+                //"https://i.dummyjson.com/data/products/1/2.jpg",
+                //"https://i.dummyjson.com/data/products/1/3.jpg",
+                //"https://i.dummyjson.com/data/products/1/4.jpg",
+                //"https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+                img
+
             ]
         },
         {
@@ -563,7 +567,7 @@ function productosData(url,headers,httpMethod,data){
 function getProducto (id) {
     let result = {};
     for (let i = 0; i < productos.length; i++){
-        if (productos[i].id === id){
+        if (productos[i].id == id){
             result = productos[i];
             break;
         }

@@ -22,34 +22,34 @@ function ProductosIndex(props) {
     //        ]
 
 
-    let datosTabla = productosData("url",{},"get",{})
+    let datosTabla = productosData("url", {}, "get", {})
 
     return (
         <div>
             <h3 className="p-3">Lista Productos</h3>
             <p>Bienvenidos a la pagina de administracion de Productos</p>
-            
-            <MainPage  
-                data = {datosTabla}
-                path = {"/listaProductos"}
-                name = {"Tabla de Productos"}  
-                columns = {["id", "title","description", "price", "stock", "category"]}
-                columnsAlias = 
+
+            <MainPage
+                data={datosTabla}
+                path={"/listaProductos"}
+                name={"Tabla de Productos"}
+                columns={["id", "title", "description", "price", "stock", "category"]}
+                columnsAlias=
                 {
                     [
-                        "ID", 
-                        "Título" , 
+                        "ID",
+                        "Título",
                         "Descripción",
-                        "Precio", 
-                        "Stock", 
+                        "Precio",
+                        "Stock",
                         "Categoría"
                     ]
                 }
-                tools = {["Crear","Actualizar", "Eliminar"]}
-               
+                tools={["Crear", "Actualizar", "Eliminar"]}
+
             />
-           
-            
+
+
         </div>
     );
 }

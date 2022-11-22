@@ -86,8 +86,6 @@ function Navbar(){
                     <img type="button" src={Login_Icono} class="btn me-2" width="100"/>
                   </Link>
                 </a>
-
-              <button type="button" class="btn btn-secondary">Registrarse</button>
             </div>
           </div>
         </div>

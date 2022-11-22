@@ -45,7 +45,7 @@ function ProductosIndex(props) {
                         "Categoría"
                     ]
                 }
-                tools={["Crear", "Actualizar", "Eliminar"]}
+                tools={["Crear", "Actualizar", "Eliminar", "AgregarTienda"]}
 
             />
 

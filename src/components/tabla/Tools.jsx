@@ -1,5 +1,6 @@
 import ActualizarTool from "./ActualizarTool";
 import EliminarTool from "./EliminarTool";
+import AddProductoTienda from "./AgregarTool";
 
 function Tools(props){
     
@@ -24,6 +25,17 @@ function Tools(props){
                 })
             ) 
         }
+
+        if (props.tools.indexOf("AgregarTienda") >= 0){
+            toolsElement.push(
+                AddProductoTienda({
+                    path: props.path,
+                    id : props.id 
+                })
+            ) 
+        }
+
+
         return toolsElement;
     }
     return null

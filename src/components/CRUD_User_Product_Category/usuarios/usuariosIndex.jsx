@@ -1,7 +1,7 @@
-import Tabla from "../tabla/tabla";
-import { getData } from "../../js/getData";
-import MainPage from "../tabla/MainPage";
-import ActualizarTool from "../tabla/ActualizarTool";
+import Tabla from "../../tabla/tabla";
+import { getData } from "../../../js/getData";
+import MainPage from "../../tabla/MainPage";
+import ActualizarTool from "../../tabla/ActualizarTool";
 
 
 
@@ -10,7 +10,7 @@ function UsuariosIndex(props) {
     
     return (
         <div>
-            <h3 className="p-3">Usuarios</h3>
+            <h3 className="p-3">Lista Usuarios</h3>
             <p>Bienvenidos a la pagina de administracion de usuarios</p>
             
             <MainPage  

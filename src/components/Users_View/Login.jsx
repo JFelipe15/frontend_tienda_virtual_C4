@@ -1,4 +1,13 @@
 import LogoLogin from "../../img/LoginImagenes/Login Desayunos.png"
+import CreateUsuario from "../CRUD_User_Product_Category/usuarios/createUsuario";
+import UsuariosIndex from "../CRUD_User_Product_Category/usuarios/usuariosIndex";
+
+import {Route,Routes} from "react-router-dom";
+
+import { Link } from "react-router-dom";
+
+
+
 
 function LoginView(){
     return (
@@ -19,11 +28,26 @@ function LoginView(){
                 <h1 class="h3 mb-3 fw-normal">Login</h1>
             
                 <div class="form-floating">
-                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                    <input 
+                        type="email" 
+                        class="form-control" 
+                        id="floatingInput" 
+                        placeholder="name@example.com"
+                        required={true}
+                        minLength={4}
+                    />
                     <label for="floatingInput">Email address</label>
                 </div>
+
                 <div class="form-floating">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password"/>
+                    <input 
+                        type="password" 
+                        class="form-control" 
+                        id="floatingPassword" 
+                        placeholder="Password"
+                        required={true}
+                        minLength={4}
+                    />
                     <label for="floatingPassword">Password</label>
                 </div>
             
@@ -36,7 +60,15 @@ function LoginView(){
                     <button class="w-100 btn btn-lg btn-primary" type="submit">Ingresar</button>
                 </div>
                 <div className="p-3">
-                    <button class="w-100 btn btn-lg btn-secondary" type="submit">Registrarse</button>
+                    {/*<button class="w-100 btn btn-lg btn-secondary" type="submit">*/}
+                        
+                        <Link to = "/listaUsuarios/Crear/">
+                            <a href="" class="w-100 btn btn-lg btn-secondary" type="submit">
+                                Registrarse
+                            </a>
+                        </Link>
+
+                    {/*</button>*/}
                 </div>
                 </div>
             </form>

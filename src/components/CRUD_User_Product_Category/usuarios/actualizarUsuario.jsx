@@ -1,19 +1,14 @@
 import { useParams } from "react-router-dom";
-import { getProducto } from "../../js/productosData";
-import { estadoPrincipal, setEstadoPrincipal } from "../../js/global";
+import { getUsuario } from "../../../js/getData";
 
-function EliminarProducto(props) {
+function ActualizarUsuario(props) {
 
-    let { idProducto } = useParams();
-    let producto = getProducto(idProducto);
-    setEstadoPrincipal({
-        name: "N/A - " + estadoPrincipal.name,
-        auhtenticated: false,
-    });
+    let { idUsuario } = useParams();
+    let usuario = getUsuario(idUsuario);
 
     return (
         <div className="col-12 w-75 mx-auto">
-            <h3>Pagina: Eliminar Usuario {estadoPrincipal.name}</h3>
+            <h3>Pagina: Actualizar Usuario</h3>
             <form>
                 <div class="row g-3">
                     <div class="">
@@ -24,7 +19,7 @@ function EliminarProducto(props) {
                             type="text"
                             class="form-control"
                             id="identifier"
-                            defaultValue={producto.id}
+                            defaultValue={usuario.id}
                             required={true}
                             readOnly={true}
                         />
@@ -38,11 +33,10 @@ function EliminarProducto(props) {
                             type="text"
                             class="form-control"
                             id="firstName"
-                            placeholder="Nombre de la persona"
-                            defaultValue={producto.firstName}
+                            placeholder="Nombres"
+                            defaultValue={usuario.firstName}
                             required={true}
                             minLength={4}
-                            readOnly={true}
                         />
                     </div>
 
@@ -54,11 +48,10 @@ function EliminarProducto(props) {
                             type="text"
                             class="form-control"
                             id="lastName"
-                            placeholder="Nombre de la persona"
-                            defaultValue={producto.lastName}
+                            placeholder="Apellidos"
+                            defaultValue={usuario.lastName}
                             required={true}
                             minLength={4}
-                            readOnly={true}
                         />
                     </div>
 
@@ -73,10 +66,9 @@ function EliminarProducto(props) {
                                 class="form-control"
                                 id="username"
                                 placeholder="Username"
-                                defaultValue={producto.username}
+                                defaultValue={usuario.username}
                                 required={true}
                                 minLength={4}
-                                readOnly={true}
                             />
                         </div>
                     </div>
@@ -90,34 +82,45 @@ function EliminarProducto(props) {
                             class="form-control"
                             id="email"
                             placeholder="ejemplo@dominio.com"
-                            defaultValue={producto.email}
+                            defaultValue={usuario.email}
                             required={true}
-                            readOnly={true}
                         />
                     </div>
 
                     <div class="col-12">
                         <label for="password" class="form-label">
-                            Contrasena
+                            Contraseña
                         </label>
                         <input
                             type={"password"}
                             class="form-control"
                             id="password"
-                            defaultValue={producto.password}
+                            defaultValue={usuario.password}
                             required={true}
-                            readOnly={true}
+                        />
+                    </div>
+
+                    <div class="col-12">
+                        <label for="password2" class="form-label">
+                            Repita la Contraseña:
+                        </label>
+                        <input
+                            type={"password"}
+                            class="form-control"
+                            id="password2"
+                            defaultValue=""
+                            required={true}
                         />
                     </div>
 
                     <hr class="my-4" />
 
                     <button
-                        class="w-100 btn btn-outline-danger btn-lg"
+                        class="w-100 btn btn-primary btn-lg"
                         type="submit"
                         onClick={onClickSubmit}
                     >
-                        Eliminar
+                        Continue to checkout
                     </button>
                 </div>
             </form>
@@ -126,8 +129,7 @@ function EliminarProducto(props) {
 }
 
 function onClickSubmit(e) {
-    e.preventDefault();
     console.log(e);
 }
 
-export default EliminarProducto;
+export default ActualizarUsuario;

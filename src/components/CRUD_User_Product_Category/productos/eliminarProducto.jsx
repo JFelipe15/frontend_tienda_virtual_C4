@@ -1,16 +1,21 @@
 import { useParams } from "react-router-dom";
-import { getProducto } from "../../js/productosData";
+import { getProducto } from "../../../js/productosData";
+import { estadoPrincipal, setEstadoPrincipal } from "../../../js/global";
 
-function ActualizarProducto(props) {
+function EliminarProducto(props) {
 
     let { idProducto } = useParams();
     let producto = getProducto(idProducto);
-    
+    setEstadoPrincipal({
+        name: "N/A - " + estadoPrincipal.name,
+        auhtenticated: false,
+    });
+
     return (
         <div className="col-12 w-75 mx-auto">
-            <h3>Pagina: Actualizar Usuario</h3>
+            <h3>Pagina: Eliminar Producto {estadoPrincipal.name}</h3>
             <form>
-            <div class="row g-3">
+                <div class="row g-3">
                     <div class="">
                         <label for="identifier" class="form-label">
                             Id
@@ -25,43 +30,41 @@ function ActualizarProducto(props) {
                         />
                     </div>
 
-                    <div class="col-12">
+                    <div class="">
                         <label for="title" class="form-label">
-                                Título
+                            Titulo
                         </label>
-                        <div class="input-group has-validation">
-                            <input
-                                type="text"
-                                class="form-control"
-                                id="title"
-                                placeholder=""
-                                defaultValue={producto.title}
-                                required={true}
-                                minLength={4}
-                            />
-                        </div>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="title"
+                            placeholder=""
+                            defaultValue={producto.title}
+                            required={true}
+                            minLength={4}
+                            readOnly={true}
+                        />
                     </div>
 
-                    <div class="col-12">
+                    <div class="">
                         <label for="description" class="form-label">
-                                Descripción
+                            Descripcion
                         </label>
-                        <div class="input-group has-validation">
-                            <input
-                                type="text"
-                                class="form-control"
-                                id="description"
-                                placeholder=""
-                                defaultValue={producto.description}
-                                required={true}
-                                minLength={4}
-                            />
-                        </div>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="description"
+                            placeholder=""
+                            defaultValue={producto.description}
+                            required={true}
+                            minLength={4}
+                            readOnly={true}
+                        />
                     </div>
 
                     <div class="col-12">
                         <label for="price" class="form-label">
-                                Precio
+                            Precio
                         </label>
                         <div class="input-group has-validation">
                             <input
@@ -72,13 +75,14 @@ function ActualizarProducto(props) {
                                 defaultValue={producto.price}
                                 required={true}
                                 minLength={4}
+                                readOnly={true}
                             />
                         </div>
                     </div>
 
                     <div class="col-12">
                         <label for="stock" class="form-label">
-                                Stock
+                            Stock
                         </label>
                         <input
                             type="int"
@@ -86,12 +90,13 @@ function ActualizarProducto(props) {
                             id="stock"
                             defaultValue={producto.stock}
                             required={true}
+                            readOnly={true}
                         />
                     </div>
 
                     <div class="col-12">
                         <label for="category" class="form-label">
-                                Categoría
+                            Categoria
                         </label>
                         <input
                             type="text"
@@ -100,17 +105,18 @@ function ActualizarProducto(props) {
                             placeholder="Bebidas"
                             defaultValue={producto.category}
                             required={true}
+                            readOnly={true}
                         />
                     </div>
 
                     <hr class="my-4" />
 
                     <button
-                        class="w-100 btn btn-primary btn-lg"
+                        class="w-100 btn btn-outline-danger btn-lg"
                         type="submit"
                         onClick={onClickSubmit}
                     >
-                        Continue to checkout
+                        Eliminar
                     </button>
                 </div>
             </form>
@@ -119,7 +125,8 @@ function ActualizarProducto(props) {
 }
 
 function onClickSubmit(e) {
+    e.preventDefault();
     console.log(e);
 }
 
-export default ActualizarProducto;
+export default EliminarProducto;

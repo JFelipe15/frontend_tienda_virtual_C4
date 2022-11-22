@@ -2,6 +2,8 @@ import PayPal from "./PayPal-Logo.jpg"
 
 import logo from "./Logo3Caucanita_sin_fondo.png"
 
+import { Link } from "react-router-dom";
+
 function CarritoIndex(){
     return(
        
@@ -12,7 +14,8 @@ function CarritoIndex(){
 
                 <section>
                     <div className="col-md-10">
-                        <h2 align = "right" id="id_orden">Orden de compra # Estado </h2>
+                        <h2 align = "right" id="id_orden">Orden de compra # {} </h2>
+                        <h2 align = "right" id="id_orden">Estado {}</h2>
                     </div>
 
                     <header>
@@ -23,7 +26,7 @@ function CarritoIndex(){
                             <div class="col-xs-9 col-md-3" align="left">
                                 <h4>La Caucanita Patoja</h4>
                                 <p id="id_orden">NIT 90025663-1 </p>
-                                <p id="fecha">Fecha/Hora :</p>
+                                <p id="fecha">Fecha/Hora :{}</p>
                                 <p id="fecha">Teléfono : 3173787193</p>
                                 <p id="dirección">Dirección : Popayán - Cauca</p>
                             </div>
@@ -37,7 +40,9 @@ function CarritoIndex(){
                             <div class="col-xs-12 col-md-12">
                             <h2>Productos en Lista</h2>
                                 <div className="p-3" align = "left">
-                                    <a class="btn btn-success" href="">Agregar más Productos</a>
+                                    <Link to = "/productos">
+                                        <a class="btn btn-success" href="">Agregar más Productos</a>
+                                    </Link>
                                 </div>
                                 <table class="table table-striped">
                                     <thead>

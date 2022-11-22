@@ -1,5 +1,5 @@
-import { productosData } from "../../js/productosData";
-import MainPage from "../tabla/MainPage";
+import { productosData } from "../../../js/productosData";
+import MainPage from "../../tabla/MainPage";
 
 function ProductosIndex(props) {
 

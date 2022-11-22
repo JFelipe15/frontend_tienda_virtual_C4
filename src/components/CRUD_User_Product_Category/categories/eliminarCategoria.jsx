@@ -1,17 +1,25 @@
 import { useParams } from "react-router-dom";
-import { getUsuario } from "../../js/getData";
-import { estadoPrincipal, setEstadoPrincipal } from "../../js/global";
+import { getCategory } from "../../../js/getDataCategorias";
+import { estadoPrincipal, setEstadoPrincipal } from "../../../js/global";
 
-function EliminarUsuario(props) {
-    let { idUsuario } = useParams();
-    let usuario = getUsuario(idUsuario);
+function EliminarCategoria(props) {
+
+    // {category.id}
+    // {category.title}
+    // {category.description}
+    // {category.price}
+    // {category.stock}
+    // {category.category}
+
+    let { idCategoria } = useParams();
+    let category = getCategory( idCategoria);
     setEstadoPrincipal({
         name: "N/A - " + estadoPrincipal.name,
         auhtenticated: false,
     });
     return (
         <div className="col-12 w-75 mx-auto">
-            <h3>Pagina: Eliminar Usuario {estadoPrincipal.name}</h3>
+            <h3>Pagina: Eliminar Categoría {estadoPrincipal.name}</h3>
             <form>
                 <div class="row g-3">
                     <div class="">
@@ -22,22 +30,36 @@ function EliminarUsuario(props) {
                             type="text"
                             class="form-control"
                             id="identifier"
-                            defaultValue={usuario.id}
+                            defaultValue={category.id}
+                            required={true}
+                            readOnly={true}
+                        />
+                    </div>
+
+                    <div class="col-12">
+                        <label for="category" class="form-label">
+                            Categoría
+                        </label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="category"
+                            defaultValue={category.category}
                             required={true}
                             readOnly={true}
                         />
                     </div>
 
                     <div class="">
-                        <label for="firstName" class="form-label">
-                            Nombres
+                        <label for="title" class="form-label">
+                            Producto
                         </label>
                         <input
                             type="text"
                             class="form-control"
-                            id="firstName"
+                            id="title"
                             placeholder="Nombres"
-                            defaultValue={usuario.firstName}
+                            defaultValue={category.title}
                             required={true}
                             minLength={4}
                             readOnly={true}
@@ -45,15 +67,15 @@ function EliminarUsuario(props) {
                     </div>
 
                     <div class="">
-                        <label for="lastName" class="form-label">
-                            Apellidos
+                        <label for="description" class="form-label">
+                            Descripción
                         </label>
                         <input
                             type="text"
                             class="form-control"
-                            id="lastName"
+                            id="description"
                             placeholder="Apellidos"
-                            defaultValue={usuario.lastName}
+                            defaultValue={category.description}
                             required={true}
                             minLength={4}
                             readOnly={true}
@@ -61,17 +83,16 @@ function EliminarUsuario(props) {
                     </div>
 
                     <div class="col-12">
-                        <label for="username" class="form-label">
-                            Nombre de Usuario
+                        <label for="price" class="form-label">
+                            Precio
                         </label>
                         <div class="input-group has-validation">
-                            <span class="input-group-text">@</span>
                             <input
                                 type="text"
                                 class="form-control"
-                                id="username"
-                                placeholder="Username"
-                                defaultValue={usuario.username}
+                                id="price"
+                                placeholder=""
+                                defaultValue={category.price}
                                 required={true}
                                 minLength={4}
                                 readOnly={true}
@@ -80,29 +101,15 @@ function EliminarUsuario(props) {
                     </div>
 
                     <div class="col-12">
-                        <label for="email" class="form-label">
-                            Correo
+                        <label for="stock" class="form-label">
+                            Stock
                         </label>
                         <input
-                            type={"email"}
+                            type="number"
                             class="form-control"
-                            id="email"
+                            id="stock"
                             placeholder="ejemplo@dominio.com"
-                            defaultValue={usuario.email}
-                            required={true}
-                            readOnly={true}
-                        />
-                    </div>
-
-                    <div class="col-12">
-                        <label for="password" class="form-label">
-                            Contrasena
-                        </label>
-                        <input
-                            type={"password"}
-                            class="form-control"
-                            id="password"
-                            defaultValue={usuario.password}
+                            defaultValue={category.stock}
                             required={true}
                             readOnly={true}
                         />
@@ -128,4 +135,4 @@ function onClickSubmit(e) {
     console.log(e);
 }
 
-export default EliminarUsuario;
+export default EliminarCategoria;

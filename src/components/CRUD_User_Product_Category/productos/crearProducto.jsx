@@ -1,7 +1,5 @@
 
 function CrearProducto(props) {
-
-
     //columns = {["id", 
     //           "title",
     //           "description", 
@@ -60,7 +58,7 @@ function CrearProducto(props) {
                         </label>
                         <div class="input-group has-validation">
                             <input
-                                type="float"
+                                type="number"
                                 class="form-control"
                                 id="price"
                                 placeholder="Ej: $ 3.000"
@@ -76,7 +74,7 @@ function CrearProducto(props) {
                                 Stock
                         </label>
                         <input
-                            type="int"
+                            type="number"
                             class="form-control"
                             id="stock"
                             placeholder="Ej: 40"

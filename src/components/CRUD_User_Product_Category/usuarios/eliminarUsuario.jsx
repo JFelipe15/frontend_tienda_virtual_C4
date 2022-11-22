@@ -1,14 +1,17 @@
 import { useParams } from "react-router-dom";
-import { getUsuario } from "../../js/getData";
+import { getUsuario } from "../../../js/getData";
+import { estadoPrincipal, setEstadoPrincipal } from "../../../js/global";
 
-function ActualizarUsuario(props) {
-
+function EliminarUsuario(props) {
     let { idUsuario } = useParams();
     let usuario = getUsuario(idUsuario);
-
+    setEstadoPrincipal({
+        name: "N/A - " + estadoPrincipal.name,
+        auhtenticated: false,
+    });
     return (
         <div className="col-12 w-75 mx-auto">
-            <h3>Pagina: Actualizar Usuario</h3>
+            <h3>Pagina: Eliminar Usuario {estadoPrincipal.name}</h3>
             <form>
                 <div class="row g-3">
                     <div class="">
@@ -37,6 +40,7 @@ function ActualizarUsuario(props) {
                             defaultValue={usuario.firstName}
                             required={true}
                             minLength={4}
+                            readOnly={true}
                         />
                     </div>
 
@@ -52,6 +56,7 @@ function ActualizarUsuario(props) {
                             defaultValue={usuario.lastName}
                             required={true}
                             minLength={4}
+                            readOnly={true}
                         />
                     </div>
 
@@ -69,6 +74,7 @@ function ActualizarUsuario(props) {
                                 defaultValue={usuario.username}
                                 required={true}
                                 minLength={4}
+                                readOnly={true}
                             />
                         </div>
                     </div>
@@ -84,12 +90,13 @@ function ActualizarUsuario(props) {
                             placeholder="ejemplo@dominio.com"
                             defaultValue={usuario.email}
                             required={true}
+                            readOnly={true}
                         />
                     </div>
 
                     <div class="col-12">
                         <label for="password" class="form-label">
-                            Contraseña
+                            Contrasena
                         </label>
                         <input
                             type={"password"}
@@ -97,30 +104,18 @@ function ActualizarUsuario(props) {
                             id="password"
                             defaultValue={usuario.password}
                             required={true}
-                        />
-                    </div>
-
-                    <div class="col-12">
-                        <label for="password2" class="form-label">
-                            Repita la Contraseña:
-                        </label>
-                        <input
-                            type={"password"}
-                            class="form-control"
-                            id="password2"
-                            defaultValue=""
-                            required={true}
+                            readOnly={true}
                         />
                     </div>
 
                     <hr class="my-4" />
 
                     <button
-                        class="w-100 btn btn-primary btn-lg"
+                        class="w-100 btn btn-outline-danger btn-lg"
                         type="submit"
                         onClick={onClickSubmit}
                     >
-                        Continue to checkout
+                        Eliminar
                     </button>
                 </div>
             </form>
@@ -129,7 +124,8 @@ function ActualizarUsuario(props) {
 }
 
 function onClickSubmit(e) {
+    e.preventDefault();
     console.log(e);
 }
 
-export default ActualizarUsuario;
+export default EliminarUsuario;
